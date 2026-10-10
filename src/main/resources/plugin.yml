@@ -1,0 +1,24 @@
+name: AdminPanel
+version: ${project.version}
+main: com.example.adminpanel.AdminPanel
+api-version: ${mc.apiversion}
+description: Admin panel GUI with simple anti-cheat and player reports
+commands:
+  admin:
+    description: Opens the custom admin panel (or leaves spectate mode)
+    usage: /admin
+    permission: adminpanel.use
+  report:
+    description: Report a player
+    usage: /report <player> <reason>
+    permission: adminpanel.report
+permissions:
+  adminpanel.use:
+    description: Allows use of admin panel
+    default: op
+  adminpanel.alert:
+    description: Receive anti-cheat alerts
+    default: op
+  adminpanel.report:
+    description: Allows reporting players
+    default: true

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>AdminPanel</artifactId>
+    <version>1.4</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <!-- Target Minecraft version. Override on the CLI: -Dmc.version=1.21.11 -Dmc.apiversion=1.21 -->
+        <mc.version>1.16.5</mc.version>
+        <mc.apiversion>1.16</mc.apiversion>
+        <!-- Resolved from mc.version; override with -Dspigot.api.version=<v>-R0.1-SNAPSHOT if needed -->
+        <spigot.api.version>${mc.version}-R0.1-SNAPSHOT</spigot.api.version>
+        <!-- Java 16 bytecode: runs on 1.16.5 (Java 16) and all newer servers (Java 17/21) -->
+        <maven.compiler.release>16</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+        <repository>
+            <id>sonatype</id>
+            <url>https://oss.sonatype.org/content/groups/public/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <!-- Compile against the OLDEST supported API so the jar works on every newer version -->
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>${spigot.api.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>AdminPanel-${project.version}-${mc.version}</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+</project>

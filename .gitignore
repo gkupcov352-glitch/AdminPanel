@@ -1,0 +1,39 @@
+# ---- Build output ----
+target/
+build/
+
+# ---- Built jars / distributables ----
+dist/
+*.jar
+
+# ---- Test servers (downloaded Paper + worlds) ----
+testserver/
+ts121/
+world/
+world_nether/
+world_the_end/
+logs/
+crash-reports/
+cache/
+.paper-remapped/
+
+# ---- IDE ----
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+
+# ---- Server runtime files ----
+eula.txt
+server.properties
+banned-*.json
+ops.json
+whitelist.json
+usercache.json
+*.log
